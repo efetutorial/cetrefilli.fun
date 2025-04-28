@@ -22,7 +22,7 @@ public final class RPC extends Module {
     public static Setting<Mode> mode = new Setting<>("Picture", Mode.Recode);
     public static Setting<Boolean> showIP = new Setting<>("ShowIP", true);
     public static Setting<sMode> smode = new Setting<>("StateMode", sMode.Stats);
-    public static Setting<String> state = new Setting<>("State", "Beta? Recode? NextGen?");
+    public static Setting<String> state = new Setting<>("State", "cetrefilli.fun gercekten cok eglenceli");
     public static Setting<Boolean> nickname = new Setting<>("Nickname", true);
     public static DiscordRichPresence presence = new DiscordRichPresence();
     public static boolean started;
@@ -110,7 +110,7 @@ public final class RPC extends Module {
                         presence.smallImageKey = "";
                     }
 
-                    presence.button_label_1 = "Download";
+                    presence.button_label_1 = "indir";
                     presence.button_url_1 = "https://cetrefilli.fun";
 
                     switch (mode.getValue()) {

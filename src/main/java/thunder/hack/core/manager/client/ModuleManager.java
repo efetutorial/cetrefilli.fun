@@ -238,6 +238,7 @@ public class ModuleManager implements IManager {
     public static Burrow burrow = new Burrow();
     public static AutoEZ autoEZ = new AutoEZ();
     public static AimBot aimBot = new AimBot();
+    public static CSGOAimbot csgoAimbot = new CSGOAimbot();
     public static Quiver quiver = new Quiver();
     public static NoPush noPush = new NoPush();
     public static UnHook unHook = new UnHook();

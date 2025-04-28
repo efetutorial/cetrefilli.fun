@@ -196,8 +196,6 @@ public class ClickGUI extends Screen {
         windows.forEach(w -> w.render(context, mouseX, mouseY, delta));
 
         if (!Objects.equals(currentDescription, "") && ModuleManager.clickGui.descriptions.getValue()) {
-            // Make sure we're using the right language
-            thunder.hack.features.modules.client.ClientSettings.updateLanguage();
             Render2DEngine.drawHudBase(context.getMatrices(), mouseX + 7, mouseY + 5, FontRenderers.sf_medium.getStringWidth(currentDescription) + 6, 11, 1f, false);
             FontRenderers.sf_medium.drawString(context.getMatrices(), currentDescription, mouseX + 10, mouseY + 8, HudEditor.getColor(0).getRGB());
             currentDescription = "";

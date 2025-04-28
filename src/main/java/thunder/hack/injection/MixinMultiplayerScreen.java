@@ -22,7 +22,7 @@ public abstract class MixinMultiplayerScreen extends Screen {
 
     @Inject(method = "init", at = @At("RETURN"))
     private void initHook(CallbackInfo ci) {
-        ButtonWidget.Builder builder = ButtonWidget.builder(Text.literal("⚡"), button -> mc.setScreen(
+        ButtonWidget.Builder builder = ButtonWidget.builder(Text.literal("Cet"), button -> mc.setScreen(
                 new WindowsScreen(
                         MacroWindow.get(ModuleManager.windows.macroPos.getValue().getX() * mc.getWindow().getScaledWidth(), ModuleManager.windows.macroPos.getValue().getY() * mc.getWindow().getScaledHeight(), ModuleManager.windows.macroPos),
                         ConfigWindow.get(ModuleManager.windows.configPos.getValue().getX() * mc.getWindow().getScaledWidth(), ModuleManager.windows.configPos.getValue().getY() * mc.getWindow().getScaledHeight(), ModuleManager.windows.configPos),

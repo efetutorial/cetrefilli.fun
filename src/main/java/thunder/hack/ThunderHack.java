@@ -21,9 +21,7 @@ import java.awt.*;
 import java.lang.invoke.MethodHandles;
 
 public class ThunderHack implements ModInitializer {
-    public static final ModMetadata MOD_META;
-
-    public static final String MOD_ID = "thunderhack";
+    public static final String MOD_ID = "cetrefilli_fun";
     public static final String VERSION = "1.7b2407";
     public static String GITHUB_HASH = "0";
     public static String BUILD_DATE = "1 Jan 1970";
@@ -46,8 +44,15 @@ public class ThunderHack implements ModInitializer {
 
     public static Core core = new Core();
 
+    public static final ModMetadata MOD_META;
     static {
-        MOD_META = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow().getMetadata();
+        ModMetadata tempMeta = null;
+        try {
+            tempMeta = FabricLoader.getInstance().getModContainer(MOD_ID).orElse(null).getMetadata();
+        } catch (Exception e) {
+            LOGGER.error("[cetrefilli.fun] Failed to get mod metadata: {}", e.getMessage());
+        }
+        MOD_META = tempMeta;
     }
 
     @Override
@@ -69,7 +74,7 @@ public class ThunderHack implements ModInitializer {
         Render2DEngine.initShaders();
         ModuleManager.rpc.startRpc();
 
-        LOGGER.info("[ThunderHack] Init time: {} ms.", System.currentTimeMillis() - initTime);
+        LOGGER.info("[cetrefilli.fun] Init time: {} ms.", System.currentTimeMillis() - initTime);
         initTime = System.currentTimeMillis();
 
         RUNTIME.addShutdownHook(new ManagerShutdownHook());
@@ -83,4 +88,4 @@ public class ThunderHack implements ModInitializer {
     public enum KeyListening {
         CetrefilliGui, ClickGui, Search, Sliders, Strings
     }
-}
+}   

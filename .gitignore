@@ -15,6 +15,9 @@ classes/
 *.iml
 *.ipr
 *.iws
+.vscode/
+.cursorrules
+.cursorignore
 
 # vscode
 
